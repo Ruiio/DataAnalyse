@@ -71,7 +71,7 @@ def plot_gender_distribution(df):
 
     # 绘制饼图
     ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%',
-            shadow=True, startangle=140,fontproperties=font)
+            shadow=True, startangle=140,textprops={'fontproperties': font})
 
     # 确保饼图是圆形的
     ax.axis('equal')
