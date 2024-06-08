@@ -2,10 +2,10 @@
 import matplotlib
 import matplotlib.pyplot as plt
 def getEduPic(df):
-    matplotlib.font_manager.fontManager.addfont('simfang.ttf')
-
-    plt.rcParams['font.sans-serif']=['simfang'] #用来正常显示中文标签
-
+    matplotlib.font_manager.fontManager.addfont('SimHei.ttf') 
+    
+    plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
+    
     plt.rcParams['axes.unicode_minus']=False#用来正常显示负号
 
     # 确保文件路径正确
@@ -46,10 +46,10 @@ def getEduPic(df):
 
 
 def plot_gender_distribution(df):
-    matplotlib.font_manager.fontManager.addfont('simfang.ttf')
-
-    plt.rcParams['font.sans-serif']=['simfang'] #用来正常显示中文标签
-
+    matplotlib.font_manager.fontManager.addfont('SimHei.ttf') 
+    
+    plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
+    
     plt.rcParams['axes.unicode_minus']=False#用来正常显示负号
     # 提取性别列
     gender_counts = df['GENDER'].value_counts()
@@ -82,10 +82,10 @@ def plot_gender_distribution(df):
 
 def plot_most_used_apps(df):
 
-    matplotlib.font_manager.fontManager.addfont('simfang.ttf')
-
-    plt.rcParams['font.sans-serif']=['simfang'] #用来正常显示中文标签
-
+    matplotlib.font_manager.fontManager.addfont('SimHei.ttf') 
+    
+    plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
+    
     plt.rcParams['axes.unicode_minus']=False#用来正常显示负号
     # 提取最常使用程序的数据
     most_used_apps = df['最常使用的程序'].value_counts().head(10)
