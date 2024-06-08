@@ -6,7 +6,7 @@ from matplotlib import colormaps, pyplot as plt
 from wordcloud import WordCloud
 import pandas as pd
 import matplotlib
-mpl.font_manager.fontManager.addfont('simfang.ttf')
+matplotlib.font_manager.fontManager.addfont('simfang.ttf')
 
 plt.rcParams['font.sans-serif']=['simfang'] #用来正常显示中文标签
 
