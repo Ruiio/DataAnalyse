@@ -112,7 +112,7 @@ def getQueryUser(queryId):
 
 # Load the data
 # 确保文件路径正确
-file_path = r'F:\dataAny\\alldata.csv'
+file_path = r'alldata.csv'
 data = pd.read_csv(file_path)
 
 # Title
