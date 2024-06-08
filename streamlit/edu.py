@@ -1,12 +1,17 @@
 
 import matplotlib
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontManager, FontProperties
+
 def getEduPic(df):
-    matplotlib.font_manager.fontManager.addfont('SimHei.ttf') 
-    
-    plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
-    
-    plt.rcParams['axes.unicode_minus']=False#用来正常显示负号
+    # 假设你的自定义字体名为 'MyCustomFont.ttf'，并且该字体文件位于当前工作目录
+    custom_font_path = 'simfang.ttf'
+     
+    # 将自定义字体添加到 matplotlib 的字体列表中
+    font_manager.fontManager.addfont(custom_font_path)
+     
+    # 创建一个 FontProperties 对象来指定字体
+    font = FontProperties(fname=custom_font_path, size=14)
 
     # 确保文件路径正确
     #file_path = r'F:\dataAny\\alldata.csv'
@@ -34,7 +39,7 @@ def getEduPic(df):
     ax.axis('equal')
 
     # 标题
-    ax.set_title('教育背景分布', fontsize=20, color="brown")
+    ax.set_title('教育背景分布', fontsize=20, color="brown",fontproperties=font)
 
     # 保存图表
     # fig.savefig("教育背景分布图1.png", dpi=300)
