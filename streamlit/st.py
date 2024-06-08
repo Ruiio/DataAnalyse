@@ -7,7 +7,7 @@ from wordcloud import WordCloud
 import pandas as pd
 import matplotlib
 
-font = {'family': 'Microsoft YaHei', 'weight': 'bold'}
+font = {'family': 'simfang', 'weight': 'bold'}
 matplotlib.rc("font", **font)
 
 
