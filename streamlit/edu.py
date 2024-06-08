@@ -1,14 +1,14 @@
 
 import matplotlib
 import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontManager, FontProperties
+from matplotlib.font_manager import fontManager, FontProperties
 
 def getEduPic(df):
     # 假设你的自定义字体名为 'MyCustomFont.ttf'，并且该字体文件位于当前工作目录
     custom_font_path = 'simfang.ttf'
      
     # 将自定义字体添加到 matplotlib 的字体列表中
-    font_manager.fontManager.addfont(custom_font_path)
+    matplotlib.font_manager.fontManager.addfont(custom_font_path)
      
     # 创建一个 FontProperties 对象来指定字体
     font = FontProperties(fname=custom_font_path, size=14)
