@@ -6,9 +6,9 @@ from matplotlib import colormaps, pyplot as plt
 from wordcloud import WordCloud
 import pandas as pd
 import matplotlib
-matplotlib.font_manager.fontManager.addfont('simfang.ttf')
+matplotlib.font_manager.fontManager.addfont('SimHei.ttf') 
 
-plt.rcParams['font.sans-serif']=['simfang'] #用来正常显示中文标签
+plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 
 plt.rcParams['axes.unicode_minus']=False#用来正常显示负号
 
