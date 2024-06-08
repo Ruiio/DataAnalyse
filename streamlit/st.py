@@ -142,9 +142,9 @@ else:
     st.write(llm_explain_text)
 
     st.subheader('用户词云')
-    mask = plt.imread(r"用户管理.jpg")  # 读取遮罩图片
+    mask = plt.imread("用户管理.jpg")  # 读取遮罩图片
     # Generate the word cloud
-    wordcloud = WordCloud(font_path=r'C:\Windows\Fonts\simfang.ttf', width=500, height=500, mask=mask,
+    wordcloud = WordCloud(font_path='simfang.ttf', width=500, height=500, mask=mask,
                           background_color='white').generate(user_profile_text)
     # Display the word cloud
     plt.figure(figsize=(10, 5))
