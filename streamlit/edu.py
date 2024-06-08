@@ -3,15 +3,17 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import fontManager, FontProperties
 
+# 假设你的自定义字体名为 'MyCustomFont.ttf'，并且该字体文件位于当前工作目录
+custom_font_path = 'simfang.ttf'
+     
+# 将自定义字体添加到 matplotlib 的字体列表中
+matplotlib.font_manager.fontManager.addfont(custom_font_path)
+     
+# 创建一个 FontProperties 对象来指定字体
+font = FontProperties(fname=custom_font_path, size=14)
+
 def getEduPic(df):
-    # 假设你的自定义字体名为 'MyCustomFont.ttf'，并且该字体文件位于当前工作目录
-    custom_font_path = 'simfang.ttf'
-     
-    # 将自定义字体添加到 matplotlib 的字体列表中
-    matplotlib.font_manager.fontManager.addfont(custom_font_path)
-     
-    # 创建一个 FontProperties 对象来指定字体
-    font = FontProperties(fname=custom_font_path, size=14)
+    
 
     # 确保文件路径正确
     #file_path = r'F:\dataAny\\alldata.csv'
@@ -33,7 +35,7 @@ def getEduPic(df):
     fig, ax = plt.subplots()
 
     # 绘制饼图
-    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
+    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140 ,fontproperties=font)
 
     # 确保饼图是圆形的
     ax.axis('equal')
@@ -51,11 +53,7 @@ def getEduPic(df):
 
 
 def plot_gender_distribution(df):
-    matplotlib.font_manager.fontManager.addfont('SimHei.ttf') 
-    
-    plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
-    
-    plt.rcParams['axes.unicode_minus']=False#用来正常显示负号
+
     # 提取性别列
     gender_counts = df['GENDER'].value_counts()
 
@@ -73,13 +71,13 @@ def plot_gender_distribution(df):
 
     # 绘制饼图
     ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%',
-            shadow=True, startangle=140)
+            shadow=True, startangle=140,fontproperties=font)
 
     # 确保饼图是圆形的
     ax.axis('equal')
 
     # 标题
-    ax.set_title('男女分布占比', fontsize=20, color='brown')
+    ax.set_title('男女分布占比', fontsize=20, color='brown',fontproperties=font)
 
     # 返回fig对象
     return fig
@@ -87,11 +85,7 @@ def plot_gender_distribution(df):
 
 def plot_most_used_apps(df):
 
-    matplotlib.font_manager.fontManager.addfont('SimHei.ttf') 
-    
-    plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
-    
-    plt.rcParams['axes.unicode_minus']=False#用来正常显示负号
+
     # 提取最常使用程序的数据
     most_used_apps = df['最常使用的程序'].value_counts().head(10)
 
@@ -108,9 +102,9 @@ def plot_most_used_apps(df):
     ax.invert_yaxis()
 
     # 添加标签和标题
-    ax.set_xlabel('使用次数')
-    ax.set_ylabel('程序')
-    ax.set_title('最常使用的程序', fontsize=20, color='brown')
+    ax.set_xlabel('使用次数',fontproperties=font)
+    ax.set_ylabel('程序',fontproperties=font)
+    ax.set_title('最常使用的程序', fontsize=20, color='brown',fontproperties=font)
 
     # 返回fig对象
     return fig
