@@ -6,10 +6,11 @@ from matplotlib import colormaps, pyplot as plt
 from wordcloud import WordCloud
 import pandas as pd
 import matplotlib
+mpl.font_manager.fontManager.addfont('simfang.ttf')
 
-font = {'family': 'simfang', 'weight': 'bold'}
-matplotlib.rc("font", **font)
+plt.rcParams['font.sans-serif']=['simfang'] #用来正常显示中文标签
 
+plt.rcParams['axes.unicode_minus']=False#用来正常显示负号
 
 def getmap(province_values):
     if isinstance(province_values, pd.Series):
